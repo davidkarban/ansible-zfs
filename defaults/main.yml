@@ -1,7 +1,10 @@
 ---
 # defaults file for zfs
-admin_email: 'root'
 
+## modify if needed
+
+# admin email for zed daemon, where to notify if there is a problem
+zfs_admin_email: 'root'
 
 ## role variables you likely do not need to change
 

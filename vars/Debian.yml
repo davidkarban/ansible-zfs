@@ -4,3 +4,4 @@ __zfs_pkgs:
   - zfsnap
   - zfsutils-linux
 
+__zfs_zed_service: 'zed'
