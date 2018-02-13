@@ -1,0 +1,6 @@
+---
+__zfs_pkgs:
+  - zfs-zed
+  - zfsnap
+  - zfsutils-linux
+

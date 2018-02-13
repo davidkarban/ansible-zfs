@@ -1,0 +1,16 @@
+---
+# defaults file for zfs
+admin_email: 'root'
+
+
+## role variables you likely do not need to change
+
+# packages to install 
+zfs_pkgs: "{{ __zfs_pkgs }}"
+
+# name of zed service
+zfs_zed_service: "{{ __zfs_zed_service }}"
+
+# repository suffix (for > centos 7.3 you need different repo)
+zfs_repository_suffix: "{{ __zfs_repository_suffix }}"
+

@@ -1,0 +1,9 @@
+---
+- name: Load the OS specific variables for subversions of RedHat
+  include_vars: "{{ ansible_os_family }}-{{ ansible_lsb.major_release }}.yml"
+
+- name: Install ZFS repository
+  yum: 
+    name: 'http://download.zfsonlinux.org/epel/zfs-release.el{{ ansible_lsb.major_release }}{{ zfs_repository_suffix }}.noarch.rpm'
+    state: present
+
