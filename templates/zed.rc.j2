@@ -51,6 +51,12 @@ ZED_EMAIL_ADDR="{{ zfs_admin_email }}"
 #ZED_NOTIFY_VERBOSE=0
 
 ##
+# Send notifications for 'ereport.fs.zfs.data' events.
+# Disabled by default, any non-empty value will enable the feature.
+#
+#ZED_NOTIFY_DATA=
+
+##
 # Pushbullet access token.
 # This grants full access to your account -- protect it accordingly!
 #   <https://www.pushbullet.com/get-started>
@@ -74,6 +80,19 @@ ZED_EMAIL_ADDR="{{ zfs_admin_email }}"
 #ZED_RUNDIR="/var/run"
 
 ##
+# Turn on/off enclosure LEDs when drives get DEGRADED/FAULTED.  This works for
+# device mapper and multipath devices as well.  Your enclosure must be
+# supported by the Linux SES driver for this to work.
+#
+ZED_USE_ENCLOSURE_LEDS=1
+
+##
+# Run a scrub after every resilver
+# Disabled by default, 1 to enable and 0 to disable.
+#ZED_SCRUB_AFTER_RESILVER=0
+#
+
+##
 # Replace a device with a hot spare after N checksum errors are detected.
 # Disabled by default; uncomment to enable.
 #
@@ -94,4 +113,15 @@ ZED_EMAIL_ADDR="{{ zfs_admin_email }}"
 # The syslog tag for marking zed events.
 #
 #ZED_SYSLOG_TAG="zed"
+
+##
+# Which set of event subclasses to log
+# By default, events from all subclasses are logged.
+# If ZED_SYSLOG_SUBCLASS_INCLUDE is set, only subclasses
+# matching the pattern are logged. Use the pipe symbol (|)
+# or shell wildcards (*, ?) to match multiple subclasses.
+# Otherwise, if ZED_SYSLOG_SUBCLASS_EXCLUDE is set, the
+# matching subclasses are excluded from logging.
+#ZED_SYSLOG_SUBCLASS_INCLUDE="checksum|scrub_*|vdev.*"
+#ZED_SYSLOG_SUBCLASS_EXCLUDE="statechange|config_*|history_event"
 
